@@ -17,3 +17,15 @@ u2.save!
 u3.save!
 u4.save!
 u5.save!
+
+a1 = Artwork.new(title: "Blue", image_url: "blue.jpg", artist_id: 1)
+a2 = Artwork.new(title: "Brown", image_url: "brown.jpg", artist_id: 1)
+a3 = Artwork.new(title: "Red", image_url: "red.jpg", artist_id: 2)
+a4 = Artwork.new(title: "Green", image_url: "green.jpg", artist_id: 3)
+a5 = Artwork.new(title: "Blue", image_url: "blu.jpg", artist_id: 4)
+
+a1.save!
+a2.save!
+a3.save!
+a4.save!
+a5.save!
