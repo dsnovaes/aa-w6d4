@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # render json: params
     user = User.new(user_params)
     if user.save
-      render json: user
+      render json: user, status: :created
     else
       render json: user.errors.full_messages, status: :unprocessable_entity
       # 422 is the status code for an unprocessable entity.
@@ -31,11 +31,11 @@ class UsersController < ApplicationController
       render json: user.errors.full_messages, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     user = User.find(params[:id])
     user.destroy
-    render json: user
+    render json: user, status: :gone
   end
 
   private
