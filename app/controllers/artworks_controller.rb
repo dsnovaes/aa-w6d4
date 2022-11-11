@@ -1,7 +1,7 @@
 class ArtworksController < ApplicationController
 
     def index
-      artworks = Artwork.all
+      artworks = Artwork.where("artists_id = ?", params[:id])
       render json: artworks
     end
 
@@ -45,7 +45,7 @@ class ArtworksController < ApplicationController
       else
         render json: artwork.errors.full_messages, status: :unprocessable_entity
       end
-      
+
     end
 
 
